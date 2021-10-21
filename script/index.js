@@ -5,6 +5,6 @@ console.log(loc);
 let data = "Sraka";
 
 (function(){
-    const sas = document.querySelector("sas");
-    sas.addEventListener("click", () => {console.log("a");});
+    const sas = document.getElementById("sas");
+    sas.addEventListener("click", () => {document.getElementById("hmain").style.color = "red";});
 })();
