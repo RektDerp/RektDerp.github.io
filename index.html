@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<meta charset="utf-8"></meta>
+<meta>
+    <title>Sraka</title>
+	<style>
+	    .fr{
+        border: 2px dashed red;
+	    	padding: 10%;
+	    	margin: 0;
+        height: 40vh;
+		}
+	</style>
+	<script>
+		var loc = "";
+		var flg = Boolean(false);
+
+		navigator.geolocation.getCurrentPosition((pos)=>{loc = pos.coords.latitude + " " + pos.coords.longitude + " acc " +  pos.coords.accuracy; console.log(loc); flg = true});
+
+	  console.log(loc);
+    let data = "Sraka";
+
+fetch("/upload/file.txt", {
+  method: "POST",
+  body: JSON.stringify(data)
+}).then(res => {
+  console.log("Request complete! response:", res);
+});
+
+	</script>
+</meta>
+<body>
+     <h1>Derpy</h1>
+     <div title="a" class="fr"></iframe>
+</body>
