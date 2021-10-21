@@ -1,0 +1,36 @@
+@keyframes hovanim {
+    from {
+        width: 10vw;
+        left: 74vw;
+		bottom: -3vh;
+    }
+    to {
+        width: 20vw;
+        left: 64vw;
+        bottom: 20vh;
+    }   
+}
+.fr{
+    border: 2px dashed red;
+    padding-left: 2%;
+    padding-bottom: 0;
+    margin: 5vw;
+    height: 40vh;
+}
+h1{
+    padding-left: 50%;
+}
+.trix{
+    position: relative;
+    width: 10vw;
+    left: 74vw;
+	bottom: -3vh;
+    height: auto;
+    
+}
+.trix:hover{
+    animation-name: hovanim;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
