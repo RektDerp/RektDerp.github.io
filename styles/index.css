@@ -3,9 +3,9 @@ body{
           rgba(0, 0, 0, 0.7),
           rgba(0, 0, 0, 0.7)
         ),
-        /*url("https://www.publicdomainpictures.net/pictures/230000/velka/pink-textured-background-1505272869Zp5.jpg");*/
+        url("https://www.publicdomainpictures.net/pictures/230000/velka/pink-textured-background-1505272869Zp5.jpg");
         /*url("/mnt/E/bg/online_background_5e218e7a2efe1ea92e6718ee9947cf83.jpg");*/
-        url("/src/online_background_0cd9a99a9a16530cceca7f28bed954c8.jpg");
+        /*url("/home/derpy/Labs3/Itera/RektDerp.github.io/src/img/online_background_0cd9a99a9a16530cceca7f28bed954c8.jpg");*/
   background-size: cover;
 
 }
@@ -55,7 +55,7 @@ body{
 }
 @keyframes tranim{
   0%   {top: 65vh;}
-  100% {top: -65vh;}
+  100% {top: -85vh;}
 }
 
 .triangle{
@@ -64,6 +64,7 @@ body{
   --xpos: 0vw;
   --ypos: 0vw;
   --speed: 3s;
+  --flag: 0;
 
   background-color: transparent;
   position: absolute;
@@ -78,7 +79,8 @@ body{
 
   animation-name: tranim;
   animation-duration: var(--speed);
-  animation-iteration-count: infinite;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
   animation-timing-function: linear;
 
 }
