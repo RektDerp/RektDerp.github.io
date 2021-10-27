@@ -98,16 +98,16 @@ body{
 }
 
 .circlebg{
-  --offset: 0px;
+  --offset: 15px;
   position: absolute;
-  margin-top: 5rem;
-  margin-left: calc(50% - var(--radius) / 2);
-  width: var(--radius);
-  height: var(--radius);
+  margin-top: calc(5rem - var(--offset));
+  margin-left: calc(50% - var(--radius) / 2 - var(--offset));
+  width: calc(var(--radius) + 30px);
+  height: calc(var(--radius) + 30px);
   border-radius: 50%;
   background-color: #FF65AA;
   overflow: hidden;
-  animation: calc(60s / var(--bpm)) ease-out running infinite pulse;
+  /*animation: calc(60s / var(--bpm)) ease-out running infinite pulse;*/
 }
 
 .maintxt{
@@ -123,8 +123,8 @@ body{
 }
 
 @keyframes tranim{
-  0%   {top: 65rem;}
-  100% {top: -85rem;}
+  0%   {top: 40rem;}
+  100% {top: -20rem;}
 }
 
 .triangle{
