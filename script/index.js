@@ -39,7 +39,7 @@ function spawnTriangle(){
   size = 2 + Math.random() * 15;
   light = 40 + Math.random() * 45;
   xpos = -28 + Math.random() * 56;
-  dur = 6 + Math.random() * 5;
+  dur = 8 + Math.random() * 5;
 
   newDiv = document.createElement("div");
   newDiv.classList.add('triangle');
