@@ -45,7 +45,7 @@ function spawnTriangle(){
   newDiv.classList.add('triangle');
   newDiv.style.setProperty('--base', size + 'vw');
   newDiv.style.setProperty('--light', light + '%');
-  newDiv.style.setProperty('--xpos', xpos + 'vw');
+  newDiv.style.setProperty('--xpos', xpos + 'rem');
   newDiv.style.setProperty('--speed', dur + 's');
   newDiv.style.setProperty('z-index', 15 - size);
   //console.log('size ' + size + ', light ' + light + ', xpos ' + xpos);
