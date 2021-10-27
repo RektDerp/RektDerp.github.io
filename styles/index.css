@@ -6,10 +6,8 @@
 
 :root {
   --radius: 600px;
+  --bpm: 140;
 }
-
-
-
 
 body{
   background: linear-gradient(
@@ -18,9 +16,8 @@ body{
         ),
         /*url("https://www.publicdomainpictures.net/pictures/230000/velka/pink-textured-background-1505272869Zp5.jpg");*/
         /*url("/mnt/E/bg/online_background_5e218e7a2efe1ea92e6718ee9947cf83.jpg");*/
-        url("../src/img/online_background_0cd9a99a9a16530cceca7f28bed954c8.jpg");
+        url("../img/online_background_0cd9a99a9a16530cceca7f28bed954c8.jpg");
   background-size: cover;
-
 }
 .sbtne{
   position: relative;
@@ -65,21 +62,31 @@ body{
   0%{
       width: var(--radius);
       height: var(--radius);
+      margin-top: calc(5rem - var(--offset));
+      margin-left: calc(50% - var(--radius) / 2 - var(--offset));
+      font-size: 200px;
   }
-  30%{
+  15%{
     width: calc(var(--radius) + 30px);
     height: calc(var(--radius) + 30px);
+    margin-top: calc(5rem - 15px - var(--offset));
+    margin-left: calc(50% - var(--radius) / 2 - 15px - var(--offset));
+    font-size: 215px;
   }
   100%{
     width: var(--radius);
     height: var(--radius);
+    margin-top: calc(5rem - var(--offset));
+    margin-left: calc(50% - var(--radius) / 2 - var(--offset));
+    font-size: 200px;
   }
 }
 
 .circleborder{
+  --offset: 30px;
   position: absolute;
   margin-top: 5rem;
-  margin-left: calc(50% - var(--radius) / 2 - 30px);
+  margin-left: calc(50% - var(--radius) / 2);
   width: var(--radius);
   height: var(--radius);
   border: 30px solid white;
@@ -87,43 +94,45 @@ body{
   border-radius: 50%;
   background-color: #00000000;
   box-shadow: 2px 5px 5px #00000099, inset 2px 5px 5px #00000099;
-  animation: 1s ease-out running infinite pulse;
+  animation: calc(60s / var(--bpm)) ease-out running infinite pulse;
 }
 
 .circlebg{
+  --offset: 0px;
   position: absolute;
-  margin-top: calc(30px + 5rem);
+  margin-top: 5rem;
   margin-left: calc(50% - var(--radius) / 2);
   width: var(--radius);
   height: var(--radius);
   border-radius: 50%;
   background-color: #FF65AA;
   overflow: hidden;
-  animation: 1s ease-out running infinite pulse;
+  animation: calc(60s / var(--bpm)) ease-out running infinite pulse;
 }
 
 .maintxt{
+  --offset: 0px;
   font-family: "Pacifico";
   margin: 0;
-  padding-top: calc(50% - 1em);
+  padding-top: calc(50% - 17rem);
   padding-left: 10%;
   color: white;
   font-size: 200px;
   text-shadow: 2px 5px 3px #00000099;
+  animation: calc(60s / var(--bpm)) ease-out running infinite pulse;
 }
 
 @keyframes tranim{
-  0%   {top: 65vh;}
-  100% {top: -85vh;}
+  0%   {top: 65rem;}
+  100% {top: -85rem;}
 }
 
 .triangle{
   --base: 6vw;
   --light: 65%;
-  --xpos: 0vw;
-  --ypos: 0vh;
+  --xpos: 0rem;
+  --ypos: 0rem;
   --speed: 3s;
-  --flag: 0;
 
   background-color: transparent;
   position: absolute;
@@ -141,5 +150,4 @@ body{
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
-
 }
