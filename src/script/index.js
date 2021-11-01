@@ -27,11 +27,15 @@ document.getElementById("butt").addEventListener("click",() => {
     id = setInterval(infiloop, 10);
     document.getElementById("butt").className = 'sbtne';
     document.getElementById("btntxt").innerHTML = 'Вырубить';
+    document.getElementById('frame').style.animation = 'calc(60s / var(--bpm)) ease-out running infinite pulse';
+    document.getElementById('maintxt').style.animation = 'calc(60s / var(--bpm)) ease-out running infinite pulse';
   }
   else {
     clearInterval(id);
     document.getElementById("butt").className = 'sbtnd';
     document.getElementById("btntxt").innerHTML = 'Врубить';
+    document.getElementById('frame').style.animation = 'none';
+    document.getElementById('maintxt').style.animation = 'none';
   }
 });
 
