@@ -59,3 +59,14 @@ function spawnTriangle(){
 
   return newDiv;
 }
+
+document.getElementById('arrow').addEventListener('click',()=>{
+  if(document.getElementById('root').style.getPropertyValue('--exp') == 0){
+    document.getElementById('root').style.setProperty('--exp', '17');
+    document.getElementById('arrow').style.transform = 'rotate(45deg)';
+  }
+  else {
+    document.getElementById('root').style.setProperty('--exp', '0');
+    document.getElementById('arrow').style.transform = 'rotate(-135deg)';
+  }
+});
