@@ -8,15 +8,43 @@
 
 </head>
 <body id='root'>
-	<div class="circlebg" id="parent">
-  </div>
-	<div class="circleborder" id="frame">
-		<p class="maintxt" id="maintxt">Тык!</p>
+	<p id="datetime">Current date and time is: 2021-10-30_15:42:35</p>
+	<div id="player">
+		<div id="controlholder">
+            <button id="btnback" class="posbtn">
+				<div class="vbar"></div>
+				<div id="trback"></div>
+			</button>
+			<button id="btnplaypause">
+              <div id="playpause" class="playing"></div>
+			</button>
+			<button id="btnforw">
+				<div id="trforw" class="posbtn"></div>
+				<div class="vbar" id="rbar"></div>
+			</button>
+		</div>
+	    <div id="trackbar">
+			<div id="progress"></div>
+		</div>
+	</div>
+    <div id="circlebg"></div>
+	<div id="circleborder">
+		<p id="maintxt">Тык!</p>
 	</div>
 	<button class="sbtnd" id="butt"><p class="btntxt" id="btntxt">Врубить</p></button>
-  <button id="arrow"></button>
+    <button id="arrow"></button>
 	<div id="footer">
+		<div id="icongroup">
+            <img src="img/derpy_my_computer.png" id="derpycomputer">
+			<p class="footpsmall centered">
+				(цэ) Rekt_Derp<br>
+				peppy (Herbert Dean)<br>
+				2021
+				</p>
+		</div>
 		<h2 id="fhead">Супер информативный футер</h2>
+		<p class="footp">Lorem ipsum<br>
+			чтототам dolor</p>
 	</div>
 	<script src="script/index.js"></script>
 </body>

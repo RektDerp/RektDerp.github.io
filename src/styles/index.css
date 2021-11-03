@@ -11,17 +11,26 @@
 }
 
 body{
-  background: linear-gradient(
-          rgba(0, 0, 0, 0.7),
-          rgba(0, 0, 0, 0.7)
-        ),
+  background: linear-gradient(#000000b2, #000000b2),
         /*url("https://www.publicdomainpictures.net/pictures/230000/velka/pink-textured-background-1505272869Zp5.jpg");*/
         /*url("/mnt/E/bg/online_background_5e218e7a2efe1ea92e6718ee9947cf83.jpg");*/
-        url("../img/online_background_0cd9a99a9a16530cceca7f28bed954c8.jpg");
+        /*url("../img/online_background_0cd9a99a9a16530cceca7f28bed954c8.jpg");*/
+        url("../img/bg2.jpg");
   background-size: 100% auto;
   margin: 0;
   padding: 0;
 }
+
+#datetime{
+  position: absolute;
+  margin: 0;
+  top: 1%;
+  left: 1%;
+  font-size: 24px;
+  color: #E7E7E7A7;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.621);
+}
+
 .sbtne{
   margin-top: 50rem;
   margin-left: calc(50% - 150px);
@@ -82,7 +91,7 @@ body{
   }
 }
 
-.circleborder{
+#circleborder{
   --hoveroff: 0px;
   --offset: 30px;
   position: absolute;
@@ -99,18 +108,18 @@ body{
   transition: width 0.5s, height  0.5s, margin 0.5s;
 }
 
-.circleborder:hover{
+#circleborder:hover{
   --hoveroff: 10px;
   --radius: 620px;
   margin-top: calc(5rem - var(--offset) - 10px);
   transition: width 0.5s, height  0.5s, margin 0.5s;
 }
 
-.circleborder:hover #maintxt {
+#circleborder:hover #maintxt {
   --hoveroff: -5px;
 }
 
-.circlebg{
+#circlebg{
   --offset: 30px;
   position: absolute;
   margin-top: calc(5rem - var(--offset));
@@ -123,7 +132,7 @@ body{
   /*animation: calc(60s / var(--bpm)) ease-out running infinite pulse;*/
 }
 
-.maintxt{
+#maintxt{
   --hoveroff: 0px;
   --offset: 0px;
   font-family: "Pacifico";
@@ -195,7 +204,7 @@ body{
 #footer{
   position: fixed;
   margin-left: 0;
-  padding-left: 0;
+  padding-left: 10px;
   width: 100%;
   height: calc(var(--exp) * 1rem);
   top: calc(100% - var(--exp) * 1rem);
@@ -204,3 +213,168 @@ body{
   transition: top 0.5s, height 0.5s;
 }
 
+#fhead{
+  font-weight: normal;
+  font-family: 'Arial';
+  color: white;
+}
+
+.footp{
+  font-weight: normal;
+  font-family: 'Arial';
+  color: #ffffffca;
+}
+.footpsmall{
+  margin-top: 0;
+  font-weight: normal;
+  font-family: 'Arial';
+  color: #ffffffca;
+  font-size: 14px;
+}
+
+.centered{
+  text-align: center;
+}
+
+#icongroup{
+  position: absolute;
+  right: 2rem;
+}
+
+#player{
+  background: linear-gradient(#00000055, #00000055), url("../img/dzidz.png");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  overflow: hidden;
+  top: 1rem;
+  right: 1rem;
+  width: 25rem;
+  height: 7.5rem;
+  border-radius: 12px;
+  box-shadow: 2px 5px 3px #00000099;
+  z-index: 2;
+}
+
+#controlholder{
+  position: absolute;
+  bottom: 4px;
+  width: 100%;
+  height: 38%;
+  background-color: #00000088;
+}
+
+#trackbar{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #ff7b00c7;
+}
+#trackbar:hover{
+  height: 10px;
+}
+
+#progress{
+  --progress: 40%; /*0 to 100*/
+  height: inherit;
+  width: var(--progress);
+  background-color: #FFB800;
+}
+
+#btnback{
+  position: absolute;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  top: calc(50% - 13px);
+  left: 33%;
+  width: 20px;
+  height: 26px;
+}
+
+.vbar{
+  position: absolute;
+  top: calc(50% - 13px);
+  height: 26px;
+  width: 4px;
+  background-color: white;
+}
+
+#trback{
+  position: absolute;
+  --base: 14px;
+  --h: 14px;
+  top: calc(50% - var(--base) / 2);
+  left: -4px;
+  transform: rotate(-90deg);
+  width: 0;
+  height: 0;
+  border-left: var(--base) solid transparent;
+  border-right: var(--base) solid transparent;
+  border-bottom: var(--h) solid white;
+}
+
+#btnforw{
+  padding: 0;
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  top: calc(50% - 13px);
+  right: 33%;
+  width: 20px;
+  height: 26px;
+}
+
+#trforw{
+  position: absolute;
+  --base: 14px;
+  --h: 14px;
+  top: calc(50% - var(--base) / 2);
+  right: -4px;
+  transform: rotate(90deg);
+  width: 0;
+  height: 0;
+  border-left: var(--base) solid transparent;
+  border-right: var(--base) solid transparent;
+  border-bottom: var(--h) solid white;
+}
+
+#rbar{
+  right: 0;
+}
+
+#btnplaypause{
+  position: absolute;
+  background-color: transparent;
+  padding: 0;
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 4px solid white;
+}
+
+.playing{
+  position: absolute;
+  height: 20px;
+  width: 8px;
+  left: calc(50% - 8px);
+  top: calc(50% - 10px);
+  border-left: 4px solid white;
+  border-right: 4px solid white;
+  
+}
+
+.paused{
+  position: absolute;
+  left: calc(50% - 8px);
+  top: calc(50% - 8px);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 16px solid white;
+  transform: rotate(90deg);
+}

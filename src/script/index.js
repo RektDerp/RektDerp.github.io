@@ -27,14 +27,14 @@ document.getElementById("butt").addEventListener("click",() => {
     id = setInterval(infiloop, 10);
     document.getElementById("butt").className = 'sbtne';
     document.getElementById("btntxt").innerHTML = 'Вырубить';
-    document.getElementById('frame').style.animation = 'calc(60s / var(--bpm)) ease-out running infinite pulse';
+    document.getElementById('circleborder').style.animation = 'calc(60s / var(--bpm)) ease-out running infinite pulse';
     document.getElementById('maintxt').style.animation = 'calc(60s / var(--bpm)) ease-out running infinite pulse';
   }
   else {
     clearInterval(id);
     document.getElementById("butt").className = 'sbtnd';
     document.getElementById("btntxt").innerHTML = 'Врубить';
-    document.getElementById('frame').style.animation = 'none';
+    document.getElementById('circleborder').style.animation = 'none';
     document.getElementById('maintxt').style.animation = 'none';
   }
 });
@@ -53,7 +53,7 @@ function spawnTriangle(){
   newDiv.style.setProperty('--speed', dur + 's');
   newDiv.style.setProperty('z-index', 15 - size);
   //console.log('size ' + size + ', light ' + light + ', xpos ' + xpos);
-  document.getElementById('parent').appendChild(newDiv);
+  document.getElementById('circlebg').appendChild(newDiv);
   crutch = new workaround(newDiv);
   newDiv.addEventListener('animationend', crutch);
 
@@ -70,3 +70,19 @@ document.getElementById('arrow').addEventListener('click',()=>{
     document.getElementById('arrow').style.transform = 'rotate(-135deg)';
   }
 });
+
+document.getElementById('btnplaypause').addEventListener('click', ()=>{
+    if(document.getElementById('playpause').className == 'playing'){
+      document.getElementById('playpause').className = 'paused';
+    }
+    else{
+      document.getElementById('playpause').className = 'playing';
+    }
+});
+
+var date;
+
+setInterval(()=>{
+  date = new Date();  
+  document.getElementById('datetime').innerHTML = 'Current time and date is: ' + date.toISOString().substring(0,19).replace('T', '_');
+}, 500);
