@@ -86,3 +86,6 @@ setInterval(()=>{
   date = new Date();  
   document.getElementById('datetime').innerHTML = 'Current time and date is: ' + date.toISOString().substring(0,19).replace('T', '_');
 }, 500);
+
+
+document.getElementById('footp').innerHTML = document.getElementById('footp').innerHTML.replace('year', new Date().getFullYear());

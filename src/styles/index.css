@@ -364,7 +364,7 @@ body{
   top: calc(50% - 10px);
   border-left: 4px solid white;
   border-right: 4px solid white;
-  
+  transition-duration: 0.5s;
 }
 
 .paused{
@@ -377,4 +377,25 @@ body{
   border-right: 10px solid transparent;
   border-bottom: 16px solid white;
   transform: rotate(90deg);
+  transition-duration: 0.5s;
+}
+
+.songtxt{
+  position: relative;
+  width: 10rem;
+  height: 24px;
+  margin: 0 0 10px 0;
+  font-family: "Pacifico";
+  text-align: center;
+  color: white;
+  left: calc(50% - 5rem);
+  text-shadow:  2px 3px 2px #00000099;
+}
+
+#song{
+  font-size: 26px;
+}
+
+#author{
+  font-size: 18px;
 }
