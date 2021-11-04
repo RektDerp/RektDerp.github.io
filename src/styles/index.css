@@ -7,16 +7,18 @@
   --radius: 600px;
   --bpm: 140;
   --exp: 0;
+  --dim: 50;
   /*overflow: hidden;*/
 }
 
 body{
-  background: linear-gradient(#000000b2, #000000b2),
+  background: linear-gradient(rgba(0,0,0,calc(var(--dim) / 100)), rgba(0,0,0,calc(var(--dim) / 100))),
         /*url("https://www.publicdomainpictures.net/pictures/230000/velka/pink-textured-background-1505272869Zp5.jpg");*/
         /*url("/mnt/E/bg/online_background_5e218e7a2efe1ea92e6718ee9947cf83.jpg");*/
         /*url("../img/online_background_0cd9a99a9a16530cceca7f28bed954c8.jpg");*/
         url("../img/bg2.jpg");
   background-size: 100% auto;
+  background-position: center;
   margin: 0;
   padding: 0;
 }
