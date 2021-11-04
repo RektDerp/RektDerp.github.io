@@ -28,7 +28,7 @@ document.getElementById("butt").addEventListener("click",() => {
     document.getElementById("butt").className = 'sbtne';
     document.getElementById("btntxt").innerHTML = 'Вырубить';
     document.getElementById('circleborder').style.animation = 'calc(60s / var(--bpm)) ease-out running infinite pulse';
-    document.getElementById('maintxt').style.animation = 'calc(60s / var(--bpm)) ease-out running infinite pulse';
+    document.getElementById('maintxt').style.animation = 'calc(60s / var(--bpm)) ease-out running infinite pulse';                                                                                                          document.title = '♂Bondage gay website♂';
   }
   else {
     clearInterval(id);
@@ -89,3 +89,4 @@ setInterval(()=>{
 
 
 document.getElementById('footp').innerHTML = document.getElementById('footp').innerHTML.replace('year', new Date().getFullYear());
+
