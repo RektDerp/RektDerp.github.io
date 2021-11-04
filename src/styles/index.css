@@ -4,10 +4,7 @@
 }
 
 :root {
-  --radius: 600px;
-  --bpm: 140;
-  --exp: 0;
-  --dim: 50;
+  
 }
 
 body{
@@ -20,6 +17,10 @@ body{
   background-position: center;
   margin: 0;
   padding: 0;
+  --radius: 600px;
+  --bpm: 140;
+  --exp: 0;
+  --dim: 50;
 }
 
 #datetime{
@@ -70,30 +71,34 @@ body{
 
 @keyframes pulse{
   0%{
-      width: var(--radius);
-      height: var(--radius);
-      top: calc(5rem - var(--offset) - var(--hoveroff));
-      left: calc(50% - var(--radius) / 2 - var(--offset));
-      font-size: calc(200px - var(--hoveroff));
+    width: var(--radius);
+    height: var(--radius);
+    top: calc(var(--flag) * (5rem - var(--offset)));
+    left: calc(var(--flag) * (50% - var(--radius) / 2 - var(--offset)));
+    font-size: calc(200px);
   }
   10%{
     width: calc(var(--radius) + 20px);
     height: calc(var(--radius) + 20px);
-    top: calc(5rem - 10px - var(--offset) - var(--hoveroff));
-    left: calc(50% - var(--radius) / 2 - 10px - var(--offset));
-    font-size: calc(210px - var(--hoveroff));
+    top: calc(var(--flag) * (5rem - 10px - var(--offset)));
+    left: calc(var(--flag) * (50% - var(--radius) / 2 - 10px - var(--offset)));
+    font-size: calc(210px);
   }
   100%{
     width: var(--radius);
     height: var(--radius);
-    top: calc(5rem - var(--offset) - var(--hoveroff));
-    left: calc(50% - var(--radius) / 2 - var(--offset));
-    font-size: calc(200px - var(--hoveroff));
+    top: calc(var(--flag) * (5rem - var(--offset)));
+    left: calc(var(--flag) * (50% - var(--radius) / 2 - var(--offset)));
+    font-size: calc(200px);
   }
 }
 
+.pulsating{
+  animation: calc(60s / var(--bpm) - 0.1s) ease-out running 1 pulse;
+}
+
 #circleborder{
-  --hoveroff: 0px;
+  --flag: 1;
   --offset: 30px;
   position: absolute;
   top: calc(5rem - var(--offset));
@@ -107,19 +112,6 @@ body{
   box-shadow: 2px 5px 5px #00000099, inset 2px 5px 5px #00000099;
   /*animation: calc(60s / var(--bpm)) ease-out running infinite pulse;*/
   transition: width 0.5s, height  0.5s, top 0.5s, left 0.5s;
-}
-
-#circleborder:hover{
-  --hoveroff: 10px;
-  --radius: 620px;
-  top: calc(5rem - var(--offset) - 10px);
-  transition: width 0.5s, height  0.5s,  top 0.5s, left 0.5s;
-}
-
-#circleborder:hover #maintxt {
-  --hoveroff: -5px;
-  width: calc(var(--radius) + 20px);
-  height: calc(var(--radius) + 20px);
 }
 
 #circlebg{
@@ -137,16 +129,17 @@ body{
 
 #maintxt{
   position: absolute;
+  --flag: 0;
   --offset: 0px;
   font-family: "Pacifico";
+  text-align: center;
   margin: 0;
-  top: calc(5rem - var(--offset));
-  left: calc(50% - var(--radius) / 2 - var(--offset));
+  padding-top: calc(50% - 200px);
+  top: 0;
+  left: 0;
   width: var(--radius);
   height: var(--radius);
-  font-size: calc(200px - var(--hoveroff));
-  padding-top: calc(50% - 17rem);
-  padding-left: 10%;
+  font-size: calc(200px);
   color: white;
   text-shadow: 2px 5px 3px #00000099;
   transition: width 0.5s, height  0.5s, top 0.5s, left 0.5s , font-size 0.5s;
@@ -182,6 +175,7 @@ body{
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
+
 
 #arrow{
     position: fixed;
@@ -404,17 +398,35 @@ body{
   font-size: 18px;
 }
 
+@keyframes flash {
+  0%{opacity: 0%;}
+  20%{opacity: 100%;}
+  100%{opacity: 0%;}
+}
+
+.flashactive{
+  animation-name: flash;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: calc(60s / var(--bpm));
+  animation-play-state: running;
+}
+
 #flashl{
+  opacity: 0%;
   position: absolute;
-  height: 100%;
+  height: 100vh;
   width: 200px;
   left: 0;
   background: linear-gradient(90deg, rgba(51, 146, 255, 0.78), rgba(196, 196, 196, 0));
   z-index: 0;
+  
 }
 #flashr{
+  opacity: 0%;
   position: absolute;
-  height: 100%;
+  height: 100vh;
   width: 200px;
   right: 0;
   background: linear-gradient(-90deg, rgba(51, 146, 255, 0.78), rgba(196, 196, 196, 0));

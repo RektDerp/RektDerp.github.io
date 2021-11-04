@@ -1,6 +1,9 @@
 var btn = false;
 var am = 0;
 var id;
+var fl;
+var c = false;
+var date;
 
 workaround = class{
   elem;
@@ -21,21 +24,40 @@ function infiloop(){
   }
 }
 
+document.getElementById('circleborder').addEventListener('animationend', ()=>{
+  document.getElementById('circleborder').classList.remove('pulsating');
+});
+
+document.getElementById('maintxt').addEventListener('animationend', ()=>{
+  document.getElementById('maintxt').classList.remove('pulsating');
+});
+
+
 document.getElementById("butt").addEventListener("click",() => {
   btn = !btn;
   if(btn){
     id = setInterval(infiloop, 10);
+    fl = setInterval(()=>{
+      document.getElementById('circleborder').classList.add('pulsating');
+      document.getElementById('maintxt').classList.add('pulsating');
+      if(c){
+        document.getElementById('flashl').classList.add('flashactive');
+        c = !c;
+      }
+      else{
+        document.getElementById('flashr').classList.add('flashactive');
+        c = !c;
+      }
+  
+    }, (60 / 140) * 1000);
     document.getElementById("butt").className = 'sbtne';
-    document.getElementById("btntxt").innerHTML = 'Вырубить';
-    document.getElementById('circleborder').style.animation = 'calc(60s / var(--bpm)) ease-out running infinite pulse';
-    document.getElementById('maintxt').style.animation = 'calc(60s / var(--bpm)) ease-out running infinite pulse';                                                                                                          document.title = '♂Bondage gay website♂';
+    document.getElementById("btntxt").innerHTML = 'Вырубить';                                                                                                                                  document.title = '♂Bondage gay website♂';
   }
   else {
     clearInterval(id);
+    clearInterval(fl);
     document.getElementById("butt").className = 'sbtnd';
     document.getElementById("btntxt").innerHTML = 'Врубить';
-    document.getElementById('circleborder').style.animation = 'none';
-    document.getElementById('maintxt').style.animation = 'none';
   }
 });
 
@@ -71,22 +93,29 @@ document.getElementById('arrow').addEventListener('click',()=>{
   }
 });
 
+document.getElementById('flashl').addEventListener('animationend',()=>{
+  document.getElementById('flashl').classList.remove('flashactive');
+});
+
+document.getElementById('flashr').addEventListener('animationend',()=>{
+  document.getElementById('flashr').classList.remove('flashactive');
+});
+
 document.getElementById('btnplaypause').addEventListener('click', ()=>{
     if(document.getElementById('playpause').className == 'playing'){
       document.getElementById('playpause').className = 'paused';
+      
     }
     else{
       document.getElementById('playpause').className = 'playing';
+      document.getElementById('flashr').classList.add('flashactive');
     }
 });
-
-var date;
 
 setInterval(()=>{
   date = new Date();  
   document.getElementById('datetime').innerHTML = 'Current time and date is: ' + date.toISOString().substring(0,19).replace('T', '_');
 }, 500);
-
 
 document.getElementById('footp').innerHTML = document.getElementById('footp').innerHTML.replace('year', new Date().getFullYear());
 
